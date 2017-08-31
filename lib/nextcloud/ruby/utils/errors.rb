@@ -8,12 +8,14 @@
 #
 module Nextcloud
   module Ruby
-    class Error < StandardError; end
+    module Errors
+      class Error < StandardError; end
 
-    class ConfigNotSet < Error
-      def initialize(param)
-        msg = "Please check if you set #{param}, seems it is missing."
-        super(msg)
+      class ConfigNotSet < Error
+        def initialize(param)
+          msg = "Please check if you set #{param}, seems it is missing."
+          super(msg)
+        end
       end
     end
   end

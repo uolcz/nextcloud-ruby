@@ -35,28 +35,28 @@ module Nextcloud
 
       def initialize
         @dav_url = nil
-        @username = username
-        @password = password
-        @directories = directories
+        @username = nil
+        @password = nil
+        @directories = nil
       end
 
       def dav_url
-        raise ConfigNotSet, 'dav_url' unless @dav_url
+        raise Errors::ConfigNotSet, 'dav_url' unless @dav_url
         URI(@dav_url)
       end
 
       def username
-        raise ConfigNotSet, 'username' unless @username
+        raise Errors::ConfigNotSet, 'username' unless @username
         @username
       end
 
       def password
-        raise ConfigNotSet, 'password' unless @password
+        raise Errors::ConfigNotSet, 'password' unless @password
         @password
       end
 
       def directories
-        raise ConfigNotSet, 'directories' unless @directories
+        raise Errors::ConfigNotSet, 'directories' unless @directories
         @directories
       end
     end
