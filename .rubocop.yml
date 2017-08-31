@@ -14,3 +14,7 @@ Documentation:
 
 Style/FileName:
   Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
