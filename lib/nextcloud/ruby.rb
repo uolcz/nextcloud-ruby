@@ -1,9 +1,9 @@
 ##
 # External dependencies
 #
-require 'net/dav'
 require 'net/https'
 require 'nokogiri'
+require 'addressable'
 
 ##
 # Classes from this gem
@@ -12,6 +12,13 @@ require 'nextcloud/ruby/version'
 require 'nextcloud/ruby/utils/errors'
 
 require 'nextcloud/ruby/configuration'
+require 'nextcloud/ruby/api'
+require 'nextcloud/ruby/response'
+require 'nextcloud/ruby/directory'
+require 'nextcloud/ruby/tag'
+
+require 'nextcloud/ruby/models/directory'
+require 'nextcloud/ruby/models/tag'
 
 ##
 #

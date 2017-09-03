@@ -1,6 +1,6 @@
 # Nextcloud::Ruby
 
-TODO: Delete this and the text above, and describe your gem
+Simple wrapper for Nextcloud API
 
 ## Installation
 
@@ -20,7 +20,51 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Before you start using nextcloud-ruby you have to configure it.
+
+```ruby
+Nextcloud::Ruby.configure do |config|
+  config.dav_url = 'https://yournextcloudserver.com/remote.php/dav/'
+  config.username = 'your nextcloud username'
+  config.password = 'your nextcloud password'
+end
+```
+And enjoy its features.
+
+### Directory
+
+#### Create a directory
+
+```ruby
+Nextcloud::Ruby::Directory.create('relative/path/to/your/new/directory')
+```
+#### Delete a directory
+
+```ruby
+Nextcloud::Ruby::Directory.delete('relative/path/to/your/directory')
+```
+#### Find a directory
+
+```ruby
+Nextcloud::Ruby::Directory.find('relative/path/to/your/directory')
+```
+#### Set a directory tag
+
+```ruby
+Nextcloud::Ruby::Directory.set_tag(directory,tag)
+```
+### Tag
+
+#### Find tag
+
+```ruby
+Nextcloud::Ruby::Tag.find(id)
+```
+#### All tags
+
+```ruby
+Nextcloud::Ruby::Tag.all
+```
 
 ## Development
 

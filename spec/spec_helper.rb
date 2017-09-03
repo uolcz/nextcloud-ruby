@@ -10,6 +10,13 @@ require 'simplecov'
 SimpleCov.start
 
 RSpec.configure do |config|
+  config.before(:each) do
+    Nextcloud::Ruby.configure do |configuration|
+      configuration.dav_url = 'https://demo12.nextcloud.bayton.org/remote.php/dav/'
+      configuration.username = 'admin'
+      configuration.password = 'admin'
+    end
+  end
   config.example_status_persistence_file_path = '.rspec_status'
 
   config.disable_monkey_patching!
