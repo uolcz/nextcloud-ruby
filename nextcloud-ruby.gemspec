@@ -7,8 +7,8 @@ require 'nextcloud/ruby/version'
 Gem::Specification.new do |spec|
   spec.name          = 'nextcloud-ruby'
   spec.version       = Nextcloud::Ruby::VERSION
-  spec.authors       = ['Andrej Antas']
-  spec.email         = ['andrej@antas.cz']
+  spec.authors       = ['Andrej Antas', 'Ondrej Bina']
+  spec.email         = ['andrej@antas.cz', 'binao@seznam.cz']
 
   spec.summary       = 'Wrapper for nextcloud XML API'
   spec.description   = 'Wrapper for nextcloud XML API - folder structure creation, etc...'
