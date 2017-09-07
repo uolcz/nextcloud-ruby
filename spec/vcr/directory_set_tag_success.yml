@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: propfind
+    uri: https://demo12.nextcloud.bayton.org/remote.php/dav/files/admin/findtestdirectory
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0"?>
+                <d:propfind
+                  xmlns:d="DAV:"
+                  xmlns:oc="http://owncloud.org/ns"
+                  xmlns:nc="http://nextcloud.org/ns">
+                  <d:prop>
+                    <oc:fileid />
+                  </d:prop>
+                </d:propfind>
+    headers: {}
+  response:
+    status:
+      code: 207
+      message: Multi-Status
+    headers:
+      Content-Length:
+      - '489'
+      Content-Type:
+      - application/xml; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0"?>
+        <d:multistatus xmlns:d="DAV:" xmlns:s="http://sabredav.org/ns" xmlns:cal="urn:ietf:params:xml:ns:caldav" xmlns:cs="http://calendarserver.org/ns/" xmlns:card="urn:ietf:params:xml:ns:carddav" xmlns:oc="http://owncloud.org/ns" xmlns:nc="http://nextcloud.org/ns"><d:response><d:href>/remote.php/dav/files/admin/findtestdirectory/</d:href><d:propstat><d:prop><oc:fileid>421</oc:fileid></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response></d:multistatus>
+    http_version: 
+  recorded_at: Thu, 07 Sep 2017 08:39:59 GMT
+- request:
+    method: propfind
+    uri: https://demo12.nextcloud.bayton.org/remote.php/dav/systemtags/2
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0"?>
+                <d:propfind
+                xmlns:d="DAV:"
+                xmlns:oc="http://owncloud.org/ns"
+                xmlns:nc="http://nextcloud.org/ns">
+                  <d:prop>
+                    <oc:display-name />
+                    <oc:id />
+                  </d:prop>
+                </d:propfind>
+    headers: {}
+  response:
+    status:
+      code: 207
+      message: Multi-Status
+    headers:
+      Content-Length:
+      - '500'
+      Content-Type:
+      - application/xml; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0"?>
+        <d:multistatus xmlns:d="DAV:" xmlns:s="http://sabredav.org/ns" xmlns:cal="urn:ietf:params:xml:ns:caldav" xmlns:cs="http://calendarserver.org/ns/" xmlns:card="urn:ietf:params:xml:ns:carddav" xmlns:oc="http://owncloud.org/ns" xmlns:nc="http://nextcloud.org/ns"><d:response><d:href>/remote.php/dav/systemtags/2</d:href><d:propstat><d:prop><oc:display-name>test</oc:display-name><oc:id>2</oc:id></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response></d:multistatus>
+    http_version: 
+  recorded_at: Thu, 07 Sep 2017 08:40:00 GMT
+- request:
+    method: put
+    uri: https://demo12.nextcloud.bayton.org/remote.php/dav/systemtags-relations/files/421/2
+    body:
+      encoding: UTF-8
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 07 Sep 2017 08:40:00 GMT
+recorded_with: VCR 3.0.3
