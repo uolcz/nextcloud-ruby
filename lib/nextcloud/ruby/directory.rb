@@ -42,7 +42,7 @@ module Nextcloud
         private
 
         def parse_directory(response, path)
-          id = response.body.xpath('//oc:fileid').text.to_i
+          id = response.body.xpath('//oc:fileid')[0].text.to_i
           Nextcloud::Ruby::Models::Directory.new(id, path)
         end
       end
